@@ -356,16 +356,14 @@ let router = createRouter({
 			props: true,
 			meta: { isLoginPage: true },
 		}
-		// ,
-		// {
-		// 	name: 'Signup Create Site',
-		// 	path: '/create-site/:productId/setup',
-		// 	component: () => import('./pages/signup/SetupSite.vue'),
-		// 	props: true,
-		// 	meta: { hideSidebar: true }
-		// }
-
-
+		,
+		{
+			name: 'Signup Create Site',
+			path: '/create-site/:productId/setup',
+			component: () => import('./pages/signup/SetupSite.vue'),
+			props: true,
+			meta: { hideSidebar: true }
+		}
 	],
 });
 

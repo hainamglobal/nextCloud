@@ -7,7 +7,7 @@
 				:title="invitedBy ? 'Invitation to join' :  `Thiết lập thông tin tổ chức của bạn`"
 				:subtitle="invitedBy ? `Invitation by ${invitedBy}` :''"
 			>
-				<!-- <template v-slot:logo>
+				<template v-slot:logo>
 					<div class="flex flex-col items-center">
 						<div class="flex flex-col items-center">
 						<img
@@ -16,7 +16,7 @@
 							/>
 					</div>
 					</div>
-				</template> -->
+				</template>
 				<form class="mt-6 flex flex-col" @submit.prevent="createSite">
 					<template v-if="is2FA">
 						<FormControl
