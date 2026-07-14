@@ -1,5 +1,5 @@
 from __future__ import annotations
-from nextgrp.nextgrp.doctype.organization.organization_press import send_org # type: ignore
+from nextgrp.nextgrp_officer.doctype.organization.organization_press import send_org # type: ignore
 import urllib
 import urllib.parse
 from contextlib import suppress

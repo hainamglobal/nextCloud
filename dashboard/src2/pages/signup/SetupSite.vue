@@ -274,7 +274,7 @@ export default {
 		},
 		getBaseOrg() {
 			return {
-				url: 'nextgrp.nextgrp.doctype.organization.organization_press.get_org',
+				url: 'nextgrp.nextgrp_officer.doctype.organization.organization_press.get_org',
 				auto: true,
 				cache: true,
 				onSuccess(res) {

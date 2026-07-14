@@ -42,14 +42,14 @@
 					<template v-else>
 						<div class="space-y-4">
 							<template v-if="!userExists">
-								<div class="grid grid-cols-1 md:grid-cols-2 gap-4"> 
+								<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 								<div>
 									<labeL class="block text-xs text-ink-gray-5 pb-[6px]">Mã Cơ quan</labeL>
 									<Autocomplete
 									v-model="selectedOrg"
-									:options="baseOrgOptions" 
-									placeholder="Chọn cơ quan..." 
-								/> 
+									:options="baseOrgOptions"
+									placeholder="Chọn cơ quan..."
+								/>
 								</div>
 									<FormControl
 										label="Tên Cơ Quan"
@@ -57,7 +57,7 @@
 										v-model="agencyName"
 										name="agencyName"
 										autocomplete="family-name"
-										variant="outline" 
+										variant="outline"
 										disabled
 									/>
 								</div>
@@ -70,7 +70,7 @@
 										v-model="agencyType"
 										name="agencyType"
 										autocomplete="given-name"
-										variant="outline" 
+										variant="outline"
 										disabled
 									/>
 									<FormControl
@@ -79,7 +79,7 @@
 										v-model="agencyLevel"
 										name="agencyLevel"
 										autocomplete="family-name"
-										variant="outline" 
+										variant="outline"
 									disabled
 									/>
 								</div>
@@ -92,7 +92,7 @@
 										v-model="province"
 										name="province"
 										autocomplete="given-name"
-										variant="outline" 
+										variant="outline"
 									disabled
 									/>
 									<FormControl
@@ -101,7 +101,7 @@
 										v-model="commune"
 										name="commune"
 										autocomplete="family-name"
-										variant="outline" 
+										variant="outline"
 										disabled
 									/>
 								</div>
@@ -138,11 +138,11 @@
 										autocomplete="given-name"
 										variant="outline"
 										required
-									 
-									/> 
+
+									/>
 								</div>
 							</template>
-							
+
 							<!-- <FormControl
 								type="select"
 								:options="countries"
@@ -231,7 +231,7 @@ export default {
 			signupValues: {},
 			baseOrgOptions:[],
 			selectedOrg: null,
-			orgMap: {}, 
+			orgMap: {},
 			phone: null,
 		};
 	},
@@ -268,22 +268,22 @@ export default {
 		getBaseOrg()
 		{
 			return{
-				
-					url: 'nextgrp.nextgrp.doctype.organization.organization_press.get_org', 
+
+					url: 'nextgrp.nextgrp_officer.doctype.organization.organization_press.get_org',
 					auto: true,
 					cache:true,
 					onSuccess(res) {
-						if (res) { 
+						if (res) {
 							const list = Array.isArray(res) ? res : (res?.message || []);
 							this.baseOrgOptions = list.map(o => {
-								this.orgMap[o.name] = o;        
+								this.orgMap[o.name] = o;
 							return {
 										label: o.organization_code,
-										value: o.name,               
+										value: o.name,
 									};
 							});
 							// res.forEach(element => {
-								
+
 								// this.baseOrgOptions.push(
 								// 	{
 								// 		label: element.organization_code,
@@ -331,7 +331,7 @@ export default {
 						toast.error(errorMessage)
 						return
 					}
-					toast.error( "Tổ chức đã được sử dụng");  
+					toast.error( "Tổ chức đã được sử dụng");
 				}
 			};
 		},
@@ -388,7 +388,7 @@ export default {
   selectedOrg(code) {
 	console.log("code" + code.value)
 	const rawMap = isProxy(this.orgMap) ? toRaw(this.orgMap) : this.orgMap;
-// console.log('orgMap =', rawMap);         
+// console.log('orgMap =', rawMap);
 // console.dir(rawMap);
 // console.log('%o', rawMap);
     const org = this.orgMap[code.value];
