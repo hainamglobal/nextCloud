@@ -1,0 +1,68 @@
+{
+  "doctype": "DocType",
+  "name": "Mobile Organization",
+  "module": "Press",
+  "custom": 0,
+  "istable": 0,
+  "issingle": 0,
+  "is_submittable": 0,
+  "track_changes": 1,
+  "engine": "InnoDB",
+  "autoname": "field:domain",
+  "title_field": "organization_name",
+  "search_fields": "organization_name,domain",
+  "field_order": [
+    "organization_name",
+    "domain",
+    "enabled"
+  ],
+  "fields": [
+    {
+      "fieldname": "organization_name",
+      "fieldtype": "Data",
+      "label": "Tên cơ quan",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "domain",
+      "fieldtype": "Data",
+      "label": "Domain",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "description": "Ví dụ: develop.nextgrp.vn (không nhập đường dẫn)"
+    },
+    {
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Cho phép dùng Mobile",
+      "default": "1",
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "export": 1
+    },
+    {
+      "role": "Press Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ],
+  "sort_field": "organization_name",
+  "sort_order": "ASC",
+  "allow_rename": 0
+}
